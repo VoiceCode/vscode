@@ -7,10 +7,6 @@ class RemoteVS {
       port: 7778
     });
 
-    this.remote.on('connect', (packet) => {
-      console.log('connecting ' + packet.id);
-    });
-
     this.remote.initialize();
   }
 
