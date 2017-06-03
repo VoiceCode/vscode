@@ -222,7 +222,7 @@ pack.implement({
       }
     },
     'selection:previous-word-by-surrounding-characters': function (input) {
-      if (!input || !input.value || input.value.length != 2) {      
+      if (!input || !input.value || input.value.length != 2) {
         return;
       }
       const first = input.value[0];
@@ -244,18 +244,66 @@ pack.implement({
 pack.commands({
   'file-finder': {
     spoken: 'fopen',
-    description: 'open file finder window',
+    description: 'open file finder window in vscode',
     continuous: false,
     action: function () {
-      this.key('p', 'command');
+      this.executeVSCodeCommand('workbench.action.quickOpen');
     }
   },
   'show-sidebar': {
-    spoken: 'atom sidebar',
-    description: 'open sidebar',
+    spoken: 'code sidebar',
+    description: 'open sidebar in vscode',
     continuous: false,
     action: function () {
-      this.key('b', 'command');
+      this.executeVSCodeCommand('workbench.action.toggleSidebarVisibility');
+    }
+  },
+  'show-explorer': {
+    spoken: 'code explorer',
+    description: 'open explorer in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.view.explorer');
+    }
+  },
+  'show-git': {
+    spoken: 'code git',
+    description: 'open git menu in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.view.git');
+    }
+  },
+  'show-search': {
+    spoken: 'code search',
+    description: 'open search menu in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.view.search');
+    }
+  },
+  'show-debug': {
+    spoken: 'code debug',
+    description: 'open debug menu in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.view.debug');
+    }
+  },
+  'show-extensions': {
+    spoken: 'code extensions',
+    description: 'open extensions menu in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.view.extensions');
+    }
+  },
+  'show-terminal': {
+    spoken: 'code terminal',
+    description: 'open terminal in vscode',
+    continuous: false,
+    action: function () {
+      this.executeVSCodeCommand('workbench.action.terminal.toggleTerminal');
     }
   }
 })
