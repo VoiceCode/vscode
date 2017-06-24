@@ -238,6 +238,12 @@ pack.implement({
       const last = input.value[1];
 
       this.executeVSCodeExposedMethod('selectBySurroundingCharacters', { first, last, nextWord: true });
+    },
+    'selection:next-word': function(){
+      this.executeVSCodeExposedMethod('selectNextWord');
+    },
+    'selection:previous-word': function(){
+      this.executeVSCodeExposedMethod('selectNextWord', { backwards: true});      
     }
   });
 
