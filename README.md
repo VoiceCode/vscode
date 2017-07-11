@@ -1,5 +1,11 @@
 VoiceCode command package for the Visual Studio Code editor.
 
+## Configuration
+
+To make everything work, change the following setting in VSCode:
+
+```"editor.emptySelectionClipboard": false```
+
 # Features
 
 This package exposes two new api methods that interact with VSCode:
